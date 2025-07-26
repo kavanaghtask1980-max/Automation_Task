@@ -5,7 +5,7 @@
     <classes>
       <class name="com.example.App">
         <methods>
-          <include name="testApp1"/>
+          <include name="testApp2"/>
         </methods>
       </class> <!-- com.example.App -->
     </classes>

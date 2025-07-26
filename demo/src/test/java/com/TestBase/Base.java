@@ -1,5 +1,6 @@
 package com.TestBase;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.PageLoadStrategy;
@@ -42,7 +43,7 @@ public class Base {
 		}
 		// dynamic wait- not pause
 	    // global time out- all driver.findelement
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);// presence
+		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 		return driver;
 	}
