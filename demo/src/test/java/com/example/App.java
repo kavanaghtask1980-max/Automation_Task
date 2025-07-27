@@ -9,7 +9,7 @@ public class App extends Base {
 
 	String username = "kavanaghtom1980";
 	String paddypower = "http://paddypower.co.uk";
-
+	String password = "";
     @Test
     public void loginPaddyPower() {
         getDriver("Edge");
@@ -21,7 +21,10 @@ public class App extends Base {
 					driver.findElement(By.xpath("//input[@name=\"password\"]")).click();
 					driver.findElement(By.xpath("//input[@name=\"password\"]")).sendKeys(password);
 					driver.findElement(By.xpath("//button[@name=\"login\"]")).click();
-		 }
+		 
+			
+			
+				}
 
     @Test
     public void testApp() {
