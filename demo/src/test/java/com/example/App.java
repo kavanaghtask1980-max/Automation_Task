@@ -1,9 +1,6 @@
 package com.example;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import com.TestBase.Base;
@@ -11,12 +8,12 @@ import com.TestBase.Base;
 public class App extends Base {
 
 	String username = "kavanaghtom1980";
-	String password = "Desire97!";
+	String paddypower = "http://paddypower.co.uk";
 
     @Test
     public void loginPaddyPower() {
         getDriver("Edge");
-		    driver.get("http://paddypower.co.uk");
+		    driver.get(paddypower);
     				driver.findElement(By.xpath("//button[@id=\"onetrust-accept-btn-handler\"]")).click();
 					driver.findElement(By.xpath("//div[@class=\"abc-button__content\"]")).click();
 					driver.findElement(By.xpath("//input[@name=\"username\"]")).click();
