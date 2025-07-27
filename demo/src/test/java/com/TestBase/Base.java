@@ -1,7 +1,6 @@
 package com.TestBase;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
@@ -11,9 +10,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeDriverService;
 import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
 
 public class Base {
 	public WebDriver driver; 
@@ -40,6 +36,7 @@ public class Base {
 			options.addArguments("--start-maximized");
 			options.addArguments("--remote-allow-origins=*");
 			driver = new EdgeDriver(options);
+				
 		}
 		// dynamic wait- not pause
 	    // global time out- all driver.findelement
