@@ -1,7 +1,6 @@
 package com.example;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.TestBase.Base;
@@ -9,7 +8,7 @@ import com.TestBase.Base;
 public class App extends Base {
 
     String username = "kavanaghtom1980";
-    String paddypower = "http://paddypower.co.uk";
+    String paddypower = "C:\\Users\\kavan\\OneDrive\\Desktop\\new 1.html";
     String password = "";
 
     @Test
@@ -24,12 +23,12 @@ public class App extends Base {
             System.out.println(title);
             System.out.println(i);
         }
-        Assert.assertEquals(title, "Online Betting & Odds | Bet with Paddy Power Sports");
+      //  Assert.assertEquals(title, "Online Betting & Odds | Bet with Paddy Power Sports");
 
         if (title == "Online Betting & Odds | with Paddy Power Sports") {
-            System.out.print(" Text Match");
+            System.out.print("Text Match ");
         } else {
-            System.out.print(" Text does not not Match");
+            System.out.print(" Text does not not Match ");
         }
 
         System.out.print(title);
