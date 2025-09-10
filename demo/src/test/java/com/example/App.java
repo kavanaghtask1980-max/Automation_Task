@@ -7,6 +7,7 @@ import com.TestBase.Base;
 
 public class App extends Base {
 
+    
     String username = "kavanaghtom1980";
     String paddypower = "C:\\Users\\kavan\\OneDrive\\Desktop\\new 1.html";
     String password = "";
@@ -16,6 +17,7 @@ public class App extends Base {
         getDriver("Edge");
         driver.get(paddypower);
         String title = driver.getTitle();
+        driver.executeScript("","");
 
         int g = 10;
 
@@ -34,7 +36,8 @@ public class App extends Base {
         System.out.print(title);
         //Assert.assertTrue(driver.getTitle().contains("Paddy"), "Title doesn't contain abc : Test Failed");
         //	Assert.assertTrue(driver.getTitle().contains("Jimmy"));
-
+    
+       // executor.executeScript("document.getElementByID('').click");
         driver.findElement(By.xpath("//button[@id=\"onetrust-accept-btn-handler\"]")).click();
         driver.findElement(By.xpath("//div[@class=\"abc-button__content\"]")).click();
         driver.findElement(By.xpath("//input[@name=\"username\"]")).click();
@@ -103,5 +106,7 @@ public class App extends Base {
     //         System.out.println(allTshirtNames.get(i).getText() + " --- " + allTshirtPrices.get(i).getText());
     //     }
     // }
+
+
 
 }

@@ -2,6 +2,7 @@ package com.TestBase;
 
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,6 +13,7 @@ import org.openqa.selenium.edge.EdgeDriverService;
 import org.openqa.selenium.edge.EdgeOptions;
 
 public class Base {
+
 	public WebDriver driver; 
 	
 	public WebDriver getDriver(String browserName) {
@@ -25,6 +27,7 @@ public class Base {
 		chOptions.addArguments("--start-maximized"); 	
 		chOptions.addArguments("--ignore-certificate-errors");
 		driver = new ChromeDriver(chOptions);
+		
 		}
 		else if(browserName.equalsIgnoreCase("Edge")) {
 			
@@ -36,13 +39,18 @@ public class Base {
 			options.addArguments("--start-maximized");
 			options.addArguments("--remote-allow-origins=*");
 			driver = new EdgeDriver(options);
-				
+			
 		}
 		// dynamic wait- not pause
 	    // global time out- all driver.findelement
 		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("", "");
 		return driver;
 	}
+
+		
+		
+
 
 }
