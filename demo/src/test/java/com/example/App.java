@@ -1,6 +1,8 @@
 package com.example;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.TestBase.Base;
@@ -9,26 +11,26 @@ public class App extends Base {
 
     
     String username = "kavanaghtom1980";
-    String paddypower = "C:\\Users\\kavan\\OneDrive\\Desktop\\new 1.html";
+    String paddypower = "http://www.paddypower.com";
     String password = "";
 
     @Test
     public void loginPaddyPower() {
-        getDriver("Edge");
+        getDriver("Chrome");
         driver.get(paddypower);
         String title = driver.getTitle();
-        driver.executeScript("","");
-
+      
         int g = 10;
 
         for (int i = 0; i < g; i++) {
             System.out.println(title);
             System.out.println(i);
         }
-      //  Assert.assertEquals(title, "Online Betting & Odds | Bet with Paddy Power Sports");
+        Assert.assertEquals(title, "Online Betting & Odds | Bet with Paddy Power Sports");
 
-        if (title == "Online Betting & Odds | with Paddy Power Sports") {
-            System.out.print("Text Match ");
+        if (title.equals("Online Betting & Odds | Bet with Paddy Power Sports")) {
+            System.out.print("Text Match "+ title);
+            
         } else {
             System.out.print(" Text does not not Match ");
         }
@@ -37,7 +39,7 @@ public class App extends Base {
         //Assert.assertTrue(driver.getTitle().contains("Paddy"), "Title doesn't contain abc : Test Failed");
         //	Assert.assertTrue(driver.getTitle().contains("Jimmy"));
     
-       // executor.executeScript("document.getElementByID('').click");
+       //executeScript("document.getElementByID('').click");
         driver.findElement(By.xpath("//button[@id=\"onetrust-accept-btn-handler\"]")).click();
         driver.findElement(By.xpath("//div[@class=\"abc-button__content\"]")).click();
         driver.findElement(By.xpath("//input[@name=\"username\"]")).click();
@@ -73,16 +75,16 @@ public class App extends Base {
     //     // a._2mylT6
     // }
 
-    // @Test
-    // public void javaScript() {
-    //     getDriver("Edge");
-    //     JavascriptExecutor js = (JavascriptExecutor) driver;
-    //     js.executeScript("window.location='" + paddypower + "'");
-    //     js.executeScript("document.getElementByID('username').click");
+    @Test
+    public void javaScript() {
+        getDriver("Chrome");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.location='" + paddypower + "'");
+        Thread.sleep(5000);
 
-    //     driver.quit();
+        driver.quit();
 
-    // }
+    }
 
     // @Test
     // public void printNames() {
