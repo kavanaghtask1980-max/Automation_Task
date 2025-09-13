@@ -76,8 +76,11 @@ public class ApplicationKeywords{
     }
 
     public void setReport(ExtentTest test) {
-        this.test=test;
+      
         System.out.print("Set Report Function " + test);
+        System.out.print("Set Report Function " + test); 
+        this.test=test;
+       
     }
 
     

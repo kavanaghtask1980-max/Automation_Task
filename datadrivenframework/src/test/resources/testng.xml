@@ -17,5 +17,14 @@
       </methods>
     </class>
   </classes>
+  </test>
+  <test name="openBrowserDailymailHubQuit" preserve-order="false">
+    <classes>
+    <class name="testcases.Session">
+      <methods>
+        <include name="Dailymail" />
+      </methods>
+    </class>
+  </classes>
 </test>
 </suite>

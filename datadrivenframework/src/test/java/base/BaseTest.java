@@ -31,12 +31,12 @@ public class BaseTest {
 
     context.setAttribute("report", rep);
     context.setAttribute("test", test);
-    test.log(Status.INFO, "In Before Test" );
+    test.log(Status.INFO, "In BeforeTest" );
     }
 
     @BeforeMethod(alwaysRun = true)
     public void BeforeMethod(ITestContext context){
-    test.log(Status.INFO, "In Before Method" );
+    test.log(Status.INFO, "In BeforeMethod" );
     
     test = (ExtentTest)context.getAttribute("test");
 		rep = (ExtentReports)context.getAttribute("report");
@@ -44,6 +44,7 @@ public class BaseTest {
 
     @AfterTest
     public void quit(){
+      test.log(Status.INFO, "In AfterTest" );
       if(rep != null)rep.flush();
     }
 
