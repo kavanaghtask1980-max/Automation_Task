@@ -22,10 +22,11 @@ public class BaseTest {
     public void BeforeTest(ITestContext context) {
 
     app = new ApplicationKeywords();
-    context.setAttribute("app", "app");
+    context.setAttribute("app", app);
     
     rep = ExtentManager.getReports();
     test = rep.createTest(context.getCurrentXmlTest().getName());
+    
     app.setReport(test);
 
     context.setAttribute("report", rep);
@@ -36,6 +37,7 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void BeforeMethod(ITestContext context){
     test.log(Status.INFO, "In Before Method" );
+    
     test = (ExtentTest)context.getAttribute("test");
 		rep = (ExtentReports)context.getAttribute("report");
     }

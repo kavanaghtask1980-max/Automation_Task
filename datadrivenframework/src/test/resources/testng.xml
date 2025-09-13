@@ -4,7 +4,7 @@
   <classes>
     <class name="testcases.Session">
       <methods>
-        <include name="doLogin" />
+        <include name="Git" />
       </methods>
     </class>
   </classes>
@@ -13,7 +13,7 @@
   <classes>
     <class name="testcases.Session">
       <methods>
-        <include name="doLogin1" />
+        <include name="Sun" />
       </methods>
     </class>
   </classes>

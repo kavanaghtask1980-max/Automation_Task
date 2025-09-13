@@ -1,7 +1,6 @@
 package com.example;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -10,12 +9,15 @@ import com.TestBase.Base;
 public class App extends Base {
 
     
-    String username = "kavanaghtom1980";
-    String paddypower = "http://www.paddypower.com";
-    String password = "";
+   
 
     @Test
     public void loginPaddyPower() {
+
+        String username = "kavanaghtom1980";
+        String paddypower = "http://www.paddypower.com";
+        String password = "";
+       
         getDriver("Chrome");
         driver.get(paddypower);
         String title = driver.getTitle();
@@ -75,16 +77,16 @@ public class App extends Base {
     //     // a._2mylT6
     // }
 
-    @Test
-    public void javaScript() {
-        getDriver("Chrome");
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.location='" + paddypower + "'");
-        Thread.sleep(5000);
+    // @Test
+    // public void javaScript() {
+    //     getDriver("Chrome");
+    //     JavascriptExecutor js = (JavascriptExecutor) driver;
+    //     js.executeScript("window.location='" + paddypower + "'");
+        
 
-        driver.quit();
+    //     driver.quit();
 
-    }
+    // }
 
     // @Test
     // public void printNames() {

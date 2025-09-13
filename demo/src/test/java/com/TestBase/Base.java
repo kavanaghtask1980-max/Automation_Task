@@ -13,7 +13,6 @@ import org.openqa.selenium.edge.EdgeOptions;
 public class Base {
 
 	public WebDriver driver; 
-	
 	public WebDriver getDriver(String browserName) {
 		
 		if(browserName.equalsIgnoreCase("Chrome")) {
