@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Session]">
+  <test thread-count="5" name="openBrowserGitHubQuit(failed)">
+    <classes>
+      <class name="testcases.Session">
+        <methods>
+          <include name="BeforeTest"/>
+          <include name="BeforeMethod"/>
+          <include name="doLogin" invocation-numbers="0"/>
+          <include name="quit"/>
+        </methods>
+      </class> <!-- testcases.Session -->
+    </classes>
+  </test> <!-- openBrowserGitHubQuit(failed) -->
+  <test thread-count="5" name="openBrowserSunHubQuit(failed)">
+    <classes>
+      <class name="testcases.Session">
+        <methods>
+          <include name="BeforeTest"/>
+          <include name="BeforeMethod"/>
+          <include name="quit"/>
+          <include name="doLogin1" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- testcases.Session -->
+    </classes>
+  </test> <!-- openBrowserSunHubQuit(failed) -->
+</suite> <!-- Failed suite [Session] -->

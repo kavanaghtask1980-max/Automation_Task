@@ -1,0 +1,21 @@
+
+<suite name="Session">
+<test name="openBrowserGitHubQuit" preserve-order="false">
+  <classes>
+    <class name="testcases.Session">
+      <methods>
+        <include name="doLogin" />
+      </methods>
+    </class>
+  </classes>
+</test>
+<test name="openBrowserSunHubQuit" preserve-order="false">
+  <classes>
+    <class name="testcases.Session">
+      <methods>
+        <include name="doLogin1" />
+      </methods>
+    </class>
+  </classes>
+</test>
+</suite>
