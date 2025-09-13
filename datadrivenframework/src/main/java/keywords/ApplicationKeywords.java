@@ -1,5 +1,6 @@
 package keywords;
 
+import java.io.FileInputStream;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -11,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeDriverService;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -21,10 +23,31 @@ public class ApplicationKeywords{
     public Properties prop;
     public Properties envProp;
     public ExtentTest test;
+    public SoftAssert softAssert;
+
+    public ApplicationKeywords() {
+		String path  = System.getProperty("user.dir")+"//src//test//resources//env.properties";
+		prop = new Properties();
+		envProp = new Properties();
+		try {
+			FileInputStream fs = new FileInputStream(path);
+			prop.load(fs);
+			String env=prop.getProperty("env")+".properties";
+			path  = System.getProperty("user.dir")+"//src//test//resources//"+env;
+			fs = new FileInputStream(path);
+			envProp.load(fs);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		softAssert = new SoftAssert();
+		
+	}
 
     public void openBrowser(String browserName) {
 
-        test.log(Status.INFO, "Opening the browser " + browserName);
+        log("Opening the browser " + browserName);
 
         if (browserName.equalsIgnoreCase("Chrome")) {
             System.setProperty("webdriver.chrome.driver", "C:\\Users\\kavan\\OneDrive\\Documents\\GitHub\\Automation_Task\\demo\\chromedriver.exe");
@@ -53,9 +76,13 @@ public class ApplicationKeywords{
     }
 
     public void navigate(String url) {
-        test.log(Status.INFO, "Navigating to " + url);
+        log("Navigating to " + url);
         driver.get(url);
-        test.log(Status.INFO, "Closing browser => " + url);
+    }
+
+    public void quit() {
+        String title = driver.getTitle();
+        log("Closing browser => " + title);
         driver.quit();
     }
 
@@ -76,11 +103,21 @@ public class ApplicationKeywords{
     }
 
     public void setReport(ExtentTest test) {
-      
-        System.out.print("Set Report Function " + test);
-        System.out.print("Set Report Function " + test); 
-        this.test=test;
-       
+       this.test=test;
+       log("In Set Report Function " + test);
+    }
+
+    public void log(String msg) {
+        test.log(Status.INFO, msg);
+    }
+
+    public void reportFailure(String failureMsg) {
+        System.out.print(failureMsg);
+        softAssert.fail(failureMsg);
+    }
+    
+    public void assertAll(){
+        softAssert.assertAll();
     }
 
     
