@@ -13,6 +13,12 @@ public class Session extends BaseTest{
     public void Git(ITestContext context){
         test.log(Status.INFO, "Starting Git Test");
         app.openBrowser("Chrome");
+        int x = 0;
+        for(x=0;x<10;x++){
+
+        test.log(Status.ERROR, "For Loop " + context);
+       
+        }
         app.navigate("https://github.com/");
      
     }
@@ -21,6 +27,12 @@ public class Session extends BaseTest{
     public void Sun(ITestContext context){
         test.log(Status.INFO, "Starting Sun Test");
         app.openBrowser("Chrome");
+        int x = 0;
+        for(x=0;x<10;x++){
+
+        test.log(Status.WARNING, "For Loop " + context);
+       
+        }
         app.navigate("https://thesun.co.uk/");
         
     }
@@ -31,7 +43,8 @@ public class Session extends BaseTest{
         app.openBrowser("Chrome");
         int x = 0;
         for(x=0;x<20;x++){
-        test.log(Status.INFO, "For Loop " + x);
+
+        test.log(Status.INFO, "For Loop " + context);
         }
         app.navigate("https://dailymail.co.uk/");
         
