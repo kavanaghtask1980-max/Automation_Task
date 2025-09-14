@@ -8,30 +8,23 @@ import base.BaseTest;
 public class Session extends BaseTest{
 
     @Test
-    public void Git(ITestContext context){
-        app.log("Starting Git Test");
+    public void openBrowserGit(ITestContext context){
+        app.log("openBrowserGit");
         app.openBrowser("Chrome");
-        app.navigate("https://github.com/");
-        app.quit();
-     
-    }
+        app.navigate("https://github.co.uk/");
+        app.reportFailure("openBrowserGit non critical fault", true);
+        
+       
+     }
 
     @Test
-    public void Sun(ITestContext context){
-        app.log("Starting Sun Test");
+    public void openBrowserSun(ITestContext context){
+        app.log("openBrowserSun");
         app.openBrowser("Chrome");
         app.navigate("https://thesun.co.uk/");
-        app.quit();
-        
-    }
-
-    @Test
-    public void Dailymail(ITestContext context){
-        app.log("Starting Dailymail Test");
-        app.openBrowser("Chrome");
-        app.navigate("https://dailymail.co.uk/");
-        app.quit();
-    }
+        app.reportFailure("openBrowserSun non critical fault", false);
+      
+     }
     
 
 }

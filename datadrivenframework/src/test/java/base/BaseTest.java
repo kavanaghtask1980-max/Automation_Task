@@ -1,6 +1,7 @@
 package base;
 
 import org.testng.ITestContext;
+import org.testng.SkipException;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -37,15 +38,23 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void BeforeMethod(ITestContext context){
     test.log(Status.INFO, "In BeforeMethod" );
-    
     test = (ExtentTest)context.getAttribute("test");
+
+    String criticalFailure = (String)context.getAttribute("criticalFailure");
+    System.out.println(criticalFailure);
+    if(criticalFailure != null && criticalFailure.equals("Y")){
+      test.log(Status.SKIP, "Critical Failure In Previous Tests" );
+        throw new SkipException("Critical Failure In Previous Tests");
+    }
 		rep = (ExtentReports)context.getAttribute("report");
     }
 
     @AfterTest
     public void quit(){
       test.log(Status.INFO, "In AfterTest" );
+      app.quit();
       if(rep != null)rep.flush();
-    }
+      
+      }
 
 }

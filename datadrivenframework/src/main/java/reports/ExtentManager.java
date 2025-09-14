@@ -28,7 +28,7 @@ public class ExtentManager {
 			f.mkdirs();// create dynamic report folder name + screenshots
 			
 			ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportFolderPath);
-			sparkReporter.config().setReportName("Production Regression Testing");
+			sparkReporter.config().setReportName("setReportName");
 			sparkReporter.config().setDocumentTitle("Automation Reports");
 			sparkReporter.config().setTheme(Theme.STANDARD);
 			sparkReporter.config().setEncoding("utf-8");
