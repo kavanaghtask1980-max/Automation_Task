@@ -1,2 +1,3 @@
 base\BaseTest.class
+listener\MyTestNGListener.class
 testcases\Session.class

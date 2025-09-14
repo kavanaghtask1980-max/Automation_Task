@@ -1,15 +1,21 @@
 
 <suite name="DataDriven - Start">
 <listeners>
-<listener class-name="testcases.Session"/>
+<listener class-name="listener.MyTestNGListener"/>
 </listeners>
-<test name="openBrowserGit">
+<test name="DataDriven - Start">
 <classes>
+<class name="testcases.Session">
+<methods>
+<include name="openBrowserGit"/>
+</methods>
+</class>
 <class name="testcases.Session">
 <methods>
 <include name="openBrowserSun"/>
 </methods>
 </class>
 </classes>
+</test>
 </suite>
 <!--  Suite  -->
