@@ -121,7 +121,6 @@ public class ApplicationKeywords {
 
     public void setReport(ExtentTest test) {
         this.test = test;
-        log("In Set Report Function " + test);
     }
 
     public void log(String msg) {

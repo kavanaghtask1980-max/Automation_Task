@@ -12,7 +12,7 @@ public class Session extends BaseTest{
         app.log("openBrowserGit");
         app.openBrowser("Chrome");
         app.navigate("https://github.co.uk/");
-        app.reportFailure("openBrowserGit non critical fault", false);
+        app.reportFailure("openBrowserGit non critical fault", true);
         
        
      }
