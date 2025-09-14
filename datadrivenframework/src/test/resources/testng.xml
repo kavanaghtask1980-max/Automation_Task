@@ -1,8 +1,8 @@
 
 <suite name="DataDriven - Start">
-<!-- <listeners>
+<listeners>
 <listener class-name="listener.MyTestNGListener"/>
-</listeners> -->
+</listeners>
 <test name="DataDriven - Start">
 <classes>
 <class name="testcases.Session">
