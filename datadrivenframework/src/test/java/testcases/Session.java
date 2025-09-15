@@ -9,9 +9,7 @@ public class Session extends BaseTest{
 
     @Test
     public void newLocalBuild(ITestContext context){
-        app.log("goToJenkins");
-        app.openBrowser("Chrome");
-        app.navigate("url");
+        app.log("newLocalBuild");
         app.click("newItem_css");
         app.type("newItemName_css", "localRepo");
         app.getText("newItemType_css");
@@ -23,14 +21,13 @@ public class Session extends BaseTest{
     }
 
     @Test
-    public void newRemoteBuild(ITestContext context){
+    public void createNewItem(ITestContext context){
         app.log("createNewItem");
-        app.openBrowser("Chrome");
-        app.navigate("url");
-        app.click("newItem_css");
-        app.type("newItemName_css", "gitHubRepo");
-        app.getText("newItemType_css");
-      
+        //startBuildJob(String buildName)
+        app.click("buildNamePlay_xpath");
+        app.click("buildNameMenu_xpath");
+        
+        
     }
     
 

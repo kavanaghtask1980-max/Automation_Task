@@ -23,6 +23,7 @@ public class BaseTest {
     public void BeforeTest(ITestContext context) {
 
     app = new ApplicationKeywords();
+    
     context.setAttribute("app", app);
     
     rep = ExtentManager.getReports();
@@ -32,6 +33,8 @@ public class BaseTest {
 
     context.setAttribute("report", rep);
     context.setAttribute("test", test);
+    app.openBrowser("Chrome");
+    app.navigate("url"); 
     test.log(Status.INFO, "In BeforeTest" );
     }
 

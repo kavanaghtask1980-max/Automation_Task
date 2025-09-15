@@ -12,11 +12,11 @@
 </class>
 </classes>
 </test>
-<test name="Jenkins new remote build job">
+<test name="Jenkins run local build job">
 <classes>
 <class name="testcases.Session">
 <methods>
-<include name="newRemoteBuild"/>
+<include name="createNewItem"/>
 </methods>
 </class>
 </classes>
