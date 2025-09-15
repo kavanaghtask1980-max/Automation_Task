@@ -87,6 +87,7 @@ public class ApplicationKeywords {
         // dynamic wait- not pause
         // global time out- all driver.findelement
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
     }
 
     public void navigate(String url) {
@@ -107,16 +108,18 @@ public class ApplicationKeywords {
 		getElement(locatorKey).click();
 	}
 
-    public void type(String locater, String data) {
-        driver.findElement(By.id(locater)).sendKeys(data);
+    public void type(String locatorKey, String data) {
+        log("Typing into locator => " + locatorKey +" with => " + data );
+        getElement(locatorKey).sendKeys(data);
     }
 
     public void select(String locater, String data) {
 
     }
 
-    public void getText(String locater) {
-
+    public void getText(String locatorKey) {
+       String text = getElement(locatorKey).getText();
+       log(text);
     }
 
     public void setReport(ExtentTest test) {

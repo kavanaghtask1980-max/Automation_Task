@@ -8,24 +8,29 @@ import base.BaseTest;
 public class Session extends BaseTest{
 
     @Test
-    public void goToJenkins(ITestContext context){
+    public void newLocalBuild(ITestContext context){
         app.log("goToJenkins");
         app.openBrowser("Chrome");
         app.navigate("url");
         app.click("newItem_css");
-        //app.type()
-        //app.getRowNumWithCellData("buildJobsHome", "testNGSelenium");
+        app.type("newItemName_css", "localRepo");
+        app.getText("newItemType_css");
+       
+     
+       // app.getRowNumWithCellData("buildJobsHome", "testNGSelenium");
         //app.reportFailure("openBrowserSun non critical fault", true);
    
     }
 
     @Test
-    public void createNewItem(ITestContext context){
+    public void newRemoteBuild(ITestContext context){
         app.log("createNewItem");
-        
-        
-        
-       
+        app.openBrowser("Chrome");
+        app.navigate("url");
+        app.click("newItem_css");
+        app.type("newItemName_css", "gitHubRepo");
+        app.getText("newItemType_css");
+      
     }
     
 

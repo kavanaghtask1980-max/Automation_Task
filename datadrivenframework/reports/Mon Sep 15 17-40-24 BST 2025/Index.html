@@ -56,7 +56,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">Sept 15, 2025 03:51:34 pm</span>
+                    <span class="badge badge-primary">Sept 15, 2025 05:40:24 pm</span>
                 </a>
             </li>
         </ul>
@@ -123,19 +123,19 @@
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">Jenkins new item</p>
-							<p class="duration text-sm">0h 0m 11s+636ms</p>
-							<span class="datetime">15:51:34 pm</span>
+							<p class="name">Jenkins new local build job</p>
+							<p class="duration text-sm">0h 0m 11s+413ms</p>
+							<span class="datetime">17:40:24 pm</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-pass">Jenkins new item</h5>
-									<span class='badge badge-success'>09.15.2025 15:51:34</span>
-									<span class='badge badge-danger'>09.15.2025 15:51:46</span>
-									<span class='badge badge-default'>0h 0m 11s+636ms</span>
+									<h5 class="test-status text-pass">Jenkins new local build job</h5>
+									<span class='badge badge-success'>09.15.2025 17:40:24</span>
+									<span class='badge badge-danger'>09.15.2025 17:40:36</span>
+									<span class='badge badge-default'>0h 0m 11s+413ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -152,91 +152,265 @@
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>15:51:34</td>
+				<td>17:40:24</td>
 				<td>
 						In BeforeTest
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>15:51:34</td>
+				<td>17:40:24</td>
 				<td>
 						In BeforeMethod
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>15:51:34</td>
-				<td>
-						createNewItem
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-check text-pass"></i></td>
-				<td>15:51:34</td>
-				<td>
-						createNewItem -  Test Passed
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>15:51:34</td>
-				<td>
-						In BeforeMethod
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>15:51:34</td>
+				<td>17:40:24</td>
 				<td>
 						goToJenkins
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>15:51:34</td>
+				<td>17:40:24</td>
 				<td>
 						Opening the browser Chrome
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>15:51:41</td>
+				<td>17:40:31</td>
 				<td>
 						Navigating to url
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>15:51:45</td>
+				<td>17:40:33</td>
 				<td>
 						Page Title => Dashboard - Jenkins
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>15:51:45</td>
+				<td>17:40:33</td>
 				<td>
 						Clicking on newItem_css
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>15:51:45</td>
+				<td>17:40:33</td>
 				<td>
 						Checking presence of newItem_css
 				</td>
 			</tr>
 			<tr class="event-row">
-				<td><i class="fa fa-check text-pass"></i></td>
-				<td>15:51:46</td>
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:34</td>
 				<td>
-						goToJenkins -  Test Passed
+						Typing into locator => newItemName_css with => localRepo
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>15:51:46</td>
+				<td>17:40:34</td>
+				<td>
+						Checking presence of newItemName_css
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:34</td>
+				<td>
+						Checking presence of newItemType_css
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:35</td>
+				<td>
+						Freestyle project
+Classic, general-purpose job type that checks out from up to one SCM, executes build steps serially, followed by post-build steps like archiving artifacts and sending email notifications.
+Maven project
+Build a maven project. Jenkins takes advantage of your POM files and drastically reduces the configuration.
+Pipeline
+Orchestrates long-running activities that can span multiple build agents. Suitable for building pipelines (formerly known as workflows) and/or organizing complex activities that do not easily fit in free-style job type.
+Multi-configuration project
+Suitable for projects that need a large number of different configurations, such as testing on multiple environments, platform-specific builds, etc.
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>17:40:35</td>
+				<td>
+						newLocalBuild -  Test Passed
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:35</td>
+				<td>
+						Closing browser => New Item - Jenkins
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:36</td>
+				<td>
+						In AfterTest
+				</td>
+			</tr>
+	</tbody>
+</table>
+</div>
+					</div>
+				</li>
+				<li class="test-item"  status="pass" test-id="2"
+					author=""
+					tag=""
+					device="">
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">Jenkins new remote build job</p>
+							<p class="duration text-sm">0h 0m 8s+262ms</p>
+							<span class="datetime">17:40:36 pm</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-pass">Jenkins new remote build job</h5>
+									<span class='badge badge-success'>09.15.2025 17:40:36</span>
+									<span class='badge badge-danger'>09.15.2025 17:40:45</span>
+									<span class='badge badge-default'>0h 0m 8s+262ms</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+<div class="detail-body mt-4">                                              
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:36</td>
+				<td>
+						In BeforeTest
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:36</td>
+				<td>
+						In BeforeMethod
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:36</td>
+				<td>
+						createNewItem
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:36</td>
+				<td>
+						Opening the browser Chrome
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:40</td>
+				<td>
+						Navigating to url
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:42</td>
+				<td>
+						Page Title => Dashboard - Jenkins
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:42</td>
+				<td>
+						Clicking on newItem_css
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:42</td>
+				<td>
+						Checking presence of newItem_css
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:43</td>
+				<td>
+						Typing into locator => newItemName_css with => gitHubRepo
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:43</td>
+				<td>
+						Checking presence of newItemName_css
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:44</td>
+				<td>
+						Checking presence of newItemType_css
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:44</td>
+				<td>
+						Freestyle project
+Classic, general-purpose job type that checks out from up to one SCM, executes build steps serially, followed by post-build steps like archiving artifacts and sending email notifications.
+Maven project
+Build a maven project. Jenkins takes advantage of your POM files and drastically reduces the configuration.
+Pipeline
+Orchestrates long-running activities that can span multiple build agents. Suitable for building pipelines (formerly known as workflows) and/or organizing complex activities that do not easily fit in free-style job type.
+Multi-configuration project
+Suitable for projects that need a large number of different configurations, such as testing on multiple environments, platform-specific builds, etc.
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>17:40:44</td>
+				<td>
+						newRemoteBuild -  Test Passed
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:44</td>
+				<td>
+						Closing browser => New Item - Jenkins
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:40:45</td>
 				<td>
 						In AfterTest
 				</td>
@@ -278,7 +452,7 @@
 				</div>
 				<div class="card-footer">
 					<div><small data-tooltip='100%'>
-						<b>1</b> tests passed
+						<b>2</b> tests passed
 						</small>
 					</div>
 					<div>
@@ -300,10 +474,10 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='15.385%'><b>2</b> events passed</small></div>
+					<div><small data-tooltip='6.667%'><b>2</b> events passed</small></div>
 					<div>
 						<small data-tooltip='0%'><b>0</b> events failed, 
-						<b data-tooltip='84.615%'>11</b> others
+						<b data-tooltip='93.333%'>28</b> others
 						</small>
 					</div>
 				</div>
@@ -317,7 +491,7 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Tests</h6>
-							<h2 class="font-size-28 font-weight-light mt-3">1</h2>
+							<h2 class="font-size-28 font-weight-light mt-3">2</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
 							<span>100.00%</span>
@@ -336,7 +510,7 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Start</h6>
-							<h4 class="font-weight-light mt-4">Sept 15, 2025 03:51:34 pm</h4>
+							<h4 class="font-weight-light mt-4">Sept 15, 2025 05:40:24 pm</h4>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -352,7 +526,7 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Duration</h6>
-							<h4 class="font-weight-light mt-4">0h 0m 11s+858ms</h4>
+							<h4 class="font-weight-light mt-4">0h 0m 20s+802ms</h4>
 							<span class="text-semibold font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -382,8 +556,8 @@
 </div>
 <script>
 	var statusGroup = {
-	    parentCount: 1,
-		passParent: 1,
+	    parentCount: 2,
+		passParent: 2,
 		failParent: 0,
 		fatalParent: 0,
 		errorParent: 0,
@@ -410,21 +584,21 @@
 		infoGrandChild: 0,
 		debugGrandChild: 0,
 		exceptionsGrandChild: 0,
-		eventsCount: 13,
+		eventsCount: 30,
 		passEvents: 2,
 		failEvents: 0,
 		fatalEvents: 0,
 		errorEvents: 0,
 		warningEvents: 0,
 		skipEvents: 0,
-		infoEvents: 11,
+		infoEvents: 28,
 		debugEvents: 0,
 		exceptionsEvents: 0
 	};
 </script>
 <script>
 	var timeline = {
-	        "Jenkins new item":11.636
+	        "Jenkins new local build job":11.413,"Jenkins new remote build job":8.262
 	};
 </script>
                 </div>

@@ -1,18 +1,22 @@
 
-<suite name="Jenkins new item">
+<suite name="New Jenkins build jobs local/remote">
 <listeners>
 <listener class-name="listener.MyTestNGListener"/>
 </listeners>
-<test name="Jenkins new item">
+<test name="Jenkins new local build job">
 <classes>
 <class name="testcases.Session">
 <methods>
-<include name="goToJenkins"/>
+<include name="newLocalBuild"/>
 </methods>
 </class>
+</classes>
+</test>
+<test name="Jenkins new remote build job">
+<classes>
 <class name="testcases.Session">
 <methods>
-<include name="createNewItem"/>
+<include name="newRemoteBuild"/>
 </methods>
 </class>
 </classes>
