@@ -12,7 +12,7 @@ public class Session extends BaseTest{
         app.log("openBrowserGit");
         app.openBrowser("Chrome");
         app.navigate("https://github.co.uk/");
-       // app.reportFailure("openBrowserGit critical fault", false);
+        app.reportFailure("openBrowserGit critical fault", true);
     }
 
     @Test
@@ -20,8 +20,8 @@ public class Session extends BaseTest{
         app.log("openBrowserSun");
         //app.openBrowser("Chrome");
         app.navigate("https://thesun.co.uk/");
-        app.click("");
-       // app.reportFailure("openBrowserSun non critical fault", false);
+       // app.click("");
+        app.reportFailure("openBrowserSun non critical fault", false);
     }
     
 
