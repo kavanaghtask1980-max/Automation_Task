@@ -1,37 +1,34 @@
 package keywords;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeDriverService;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
-import java.io.File;
-import java.io.IOException;
-
-import java.util.Date;
-
-import org.openqa.selenium.OutputType;
-
 import reports.ExtentManager;
-
-
-
-
 
 public class ApplicationKeywords {
 
@@ -94,7 +91,9 @@ public class ApplicationKeywords {
 
     public void navigate(String url) {
         log("Navigating to " + url);
-        driver.get(url);
+        driver.get(envProp.getProperty(url));
+        String title = driver.getTitle();
+        log("Page Title => " + title);
     }
 
     public void quit() {
@@ -103,9 +102,10 @@ public class ApplicationKeywords {
         driver.quit();
     }
 
-    public void click(String locater) {
-        driver.findElement(By.xpath(locater)).click();
-    }
+    	public void click(String locatorKey) {
+		log("Clicking on "+locatorKey);
+		getElement(locatorKey).click();
+	}
 
     public void type(String locater, String data) {
         driver.findElement(By.id(locater)).sendKeys(data);
@@ -132,31 +132,112 @@ public class ApplicationKeywords {
         test.log(Status.FAIL, failureMsg);
         softAssert.fail(failureMsg);
         if (stopOnFailure) {
+            Reporter.getCurrentTestResult().getTestContext().setAttribute("criticalFailure", "Y");
             assertAll();
         }
     }
 
     public void assertAll() {
-        Reporter.getCurrentTestResult().getTestContext().setAttribute("criticalFailure", "Y");
         softAssert.assertAll();
     }
 
-    	public void takeScreenShot(){
-		// fileName of the screenshot
-		Date d=new Date();
-		String screenshotFile=d.toString().replace(":", "_").replace(" ", "_")+".png";
-		// take screenshot
-		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		try {
-			// get the dynamic folder name
-			FileUtils.copyFile(srcFile, new File(ExtentManager.screenshotFolderPath+"//"+screenshotFile));
-			//put screenshot file in reports
-			test.log(Status.INFO,"Screenshot-> "+ test.addScreenCaptureFromPath(ExtentManager.screenshotFolderPath+"//"+screenshotFile));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+    public void takeScreenShot() {
+        // fileName of the screenshot
+        Date d = new Date();
+        String screenshotFile = d.toString().replace(":", "_").replace(" ", "_") + ".png";
+        // take screenshot
+        File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            // get the dynamic folder name
+            FileUtils.copyFile(srcFile, new File(ExtentManager.screenshotFolderPath + "//" + screenshotFile));
+            //put screenshot file in reports
+            test.log(Status.INFO, "Screenshot-> " + test.addScreenCaptureFromPath(ExtentManager.screenshotFolderPath + "//" + screenshotFile));
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    	public int getRowNumWithCellData(String tableLocator, String data) {
+		
+		WebElement table = getElement(tableLocator);
+		List<WebElement> rows = table.findElements(By.tagName("tr"));
+		for(int rNum=0;rNum<rows.size();rNum++) {
+			WebElement row = rows.get(rNum);
+			List<WebElement> cells = row.findElements(By.tagName("td"));
+			for(int cNum=0;cNum<cells.size();cNum++) {
+				WebElement cell = cells.get(cNum);
+				System.out.println("Text "+ cell.getText());
+				if(!cell.getText().trim().equals(""))
+					if(data.startsWith(cell.getText()))
+						return(rNum+1);
+			}
 		}
 		
+		return -1; // data is not found
 	}
+
+    public WebElement getElement(String locatorKey) {
+		//  check the presence
+       
+       //lkgetLocator(locaterKey);
+		if(!isElementPresent(locatorKey)) {
+			// report failure
+			//System.out.println("Element not present "+locatorKey);
+		}
+		//  check the visibility
+		if(!isElementVisible(locatorKey)) {
+			// report failure
+			//System.out.println("Element not visible "+locatorKey);
+		}
+			
+		WebElement e = driver.findElement(getLocator(locatorKey));
+		
+		return e;
+	}
+
+    	public boolean isElementPresent(String locatorKey) {
+		log("Checking presence of "+locatorKey);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		try {
+			wait.until(ExpectedConditions.presenceOfElementLocated(getLocator(locatorKey)));
+			
+		}catch(Exception e) {
+			return false;
+		}
+		return true;
+	}
+	
+	// true - visible
+	// false - not visible
+	public boolean isElementVisible(String locatorKey) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		try {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator(locatorKey)));
+		}catch(Exception e) {
+			return false;
+		}
+		return true;
+	}
+	
+	public By getLocator(String locatorKey) {
+		By by=null;
+		System.out.println(locatorKey);
+		if(locatorKey.endsWith("_id"))
+			by = By.id(prop.getProperty(locatorKey));
+		else if(locatorKey.endsWith("_xpath"))
+			by = By.xpath(prop.getProperty(locatorKey));
+		else if(locatorKey.endsWith("_css"))
+			by = By.cssSelector(prop.getProperty(locatorKey));
+		else if(locatorKey.endsWith("_name"))
+			by = By.name(prop.getProperty(locatorKey));
+		
+		return by;
+		
+		
+	}
+
+	
 
 }

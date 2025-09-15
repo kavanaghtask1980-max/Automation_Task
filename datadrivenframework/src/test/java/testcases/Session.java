@@ -8,20 +8,24 @@ import base.BaseTest;
 public class Session extends BaseTest{
 
     @Test
-    public void openBrowserGit(ITestContext context){
-        app.log("openBrowserGit");
+    public void goToJenkins(ITestContext context){
+        app.log("goToJenkins");
         app.openBrowser("Chrome");
-        app.navigate("https://github.co.uk/");
-        app.reportFailure("openBrowserGit critical fault", true);
+        app.navigate("url");
+        app.click("newItem_css");
+        //app.type()
+        //app.getRowNumWithCellData("buildJobsHome", "testNGSelenium");
+        //app.reportFailure("openBrowserSun non critical fault", true);
+   
     }
 
     @Test
-    public void openBrowserSun(ITestContext context){
-        app.log("openBrowserSun");
-        //app.openBrowser("Chrome");
-        app.navigate("https://thesun.co.uk/");
-       // app.click("");
-        app.reportFailure("openBrowserSun non critical fault", false);
+    public void createNewItem(ITestContext context){
+        app.log("createNewItem");
+        
+        
+        
+       
     }
     
 

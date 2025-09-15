@@ -1,18 +1,18 @@
 
-<suite name="DataDriven - Start">
+<suite name="Jenkins new item">
 <listeners>
 <listener class-name="listener.MyTestNGListener"/>
 </listeners>
-<test name="DataDriven - Start">
+<test name="Jenkins new item">
 <classes>
 <class name="testcases.Session">
 <methods>
-<include name="openBrowserGit"/>
+<include name="goToJenkins"/>
 </methods>
 </class>
 <class name="testcases.Session">
 <methods>
-<include name="openBrowserSun"/>
+<include name="createNewItem"/>
 </methods>
 </class>
 </classes>

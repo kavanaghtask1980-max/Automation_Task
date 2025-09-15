@@ -52,7 +52,7 @@ public class BaseTest {
     @AfterTest
     public void quit(){
       test.log(Status.INFO, "In AfterTest" );
-      app.quit();
+      //app.quit();
       if(rep != null)rep.flush();
       
       }
