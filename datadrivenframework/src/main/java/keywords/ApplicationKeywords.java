@@ -10,6 +10,7 @@ import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.TakesScreenshot;
@@ -18,7 +19,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeDriverService;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -59,12 +59,38 @@ public class ApplicationKeywords {
 
     }
 
+    public void homeBuildJobOptions(String homeBuildOption) {
+
+        WebElement homeBuildJobMenu = getElement("homeBuildJobMenu_css");
+        List<WebElement> elements = homeBuildJobMenu.findElements(By.className("jenkins-dropdown__item"));
+        
+        System.out.println("Number of elements:" + elements.size());
+
+        for (int i = 0; i < elements.size(); i++) {
+            String menuOptionActual = elements.get(i).getText();
+            if (menuOptionActual.equals(homeBuildOption)) {
+                
+                JavascriptExecutor js = (JavascriptExecutor) driver;
+                WebElement e = elements.get(i);
+                
+                js.executeScript("arguments[0].click();", e);
+              
+                String pageTitle = driver.getTitle();
+                test.log(Status.INFO, "Menu item selected " + homeBuildOption);
+               
+                test.log(Status.INFO, "Page title is " +pageTitle);
+                break;
+            }
+        }
+
+    }
+
     public void openBrowser(String browserName) {
 
         log("Opening the browser " + browserName);
 
         if (browserName.equalsIgnoreCase("Chrome")) {
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\kavan\\OneDrive\\Documents\\GitHub\\Automation_Task\\demo\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "C:\\Users\\kavan\\Automation_Task\\demo\\chromedriver.exe");
             ChromeOptions chOptions = new ChromeOptions();
             chOptions.addArguments("--remote-allow-origins=*");
             chOptions.addArguments("--disable-notifications");
@@ -73,8 +99,8 @@ public class ApplicationKeywords {
             driver = new ChromeDriver(chOptions);
 
         } else if (browserName.equalsIgnoreCase("Edge")) {
-
-            System.setProperty(EdgeDriverService.EDGE_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
+            System.setProperty("webdriver.edge.driver", "C:\\Users\\kavan\\Automation_Task\\demo\\msedgedriver.exe");
+            //  System.setProperty(EdgeDriverService.EDGE_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
             EdgeOptions options = new EdgeOptions();
             options.setPageLoadStrategy(PageLoadStrategy.EAGER);
             //options.setBinary(new File(""));
@@ -103,13 +129,13 @@ public class ApplicationKeywords {
         driver.quit();
     }
 
-    	public void click(String locatorKey) {
-		log("Clicking on "+locatorKey);
-		getElement(locatorKey).click();
-	}
+    public void click(String locatorKey) {
+        log("Clicking on " + locatorKey);
+        getElement(locatorKey).click();
+    }
 
     public void type(String locatorKey, String data) {
-        log("Typing into locator => " + locatorKey +" with => " + data );
+        log("Typing into locator => " + locatorKey + " with => " + data);
         getElement(locatorKey).sendKeys(data);
     }
 
@@ -118,8 +144,8 @@ public class ApplicationKeywords {
     }
 
     public void getText(String locatorKey) {
-       String text = getElement(locatorKey).getText();
-       log(text);
+        String text = getElement(locatorKey).getText();
+        log(text);
     }
 
     public void setReport(ExtentTest test) {
@@ -162,85 +188,84 @@ public class ApplicationKeywords {
 
     }
 
-    	public int getRowNumWithCellData(String tableLocator, String data) {
-		
-		WebElement table = getElement(tableLocator);
-		List<WebElement> rows = table.findElements(By.tagName("tr"));
-		for(int rNum=0;rNum<rows.size();rNum++) {
-			WebElement row = rows.get(rNum);
-			List<WebElement> cells = row.findElements(By.tagName("td"));
-			for(int cNum=0;cNum<cells.size();cNum++) {
-				WebElement cell = cells.get(cNum);
-				System.out.println("Text "+ cell.getText());
-				if(!cell.getText().trim().equals(""))
-					if(data.startsWith(cell.getText()))
-						return(rNum+1);
-			}
-		}
-		
-		return -1; // data is not found
-	}
+    public int getRowNumWithCellData(String tableLocator, String data) {
+
+        WebElement table = getElement(tableLocator);
+        List<WebElement> rows = table.findElements(By.tagName("tr"));
+        for (int rNum = 0; rNum < rows.size(); rNum++) {
+            WebElement row = rows.get(rNum);
+            List<WebElement> cells = row.findElements(By.tagName("td"));
+            for (int cNum = 0; cNum < cells.size(); cNum++) {
+                WebElement cell = cells.get(cNum);
+                System.out.println("Text " + cell.getText());
+                if (!cell.getText().trim().equals("")) {
+                    if (data.startsWith(cell.getText())) {
+                        return (rNum + 1);
+                    }
+                }
+            }
+        }
+
+        return -1; // data is not found
+    }
 
     public WebElement getElement(String locatorKey) {
-		//  check the presence
-       
-       //lkgetLocator(locaterKey);
-		if(!isElementPresent(locatorKey)) {
-			// report failure
-			//System.out.println("Element not present "+locatorKey);
-		}
-		//  check the visibility
-		if(!isElementVisible(locatorKey)) {
-			// report failure
-			//System.out.println("Element not visible "+locatorKey);
-		}
-			
-		WebElement e = driver.findElement(getLocator(locatorKey));
-		
-		return e;
-	}
+        //  check the presence
 
-    	public boolean isElementPresent(String locatorKey) {
-		log("Checking presence of "+locatorKey);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		try {
-			wait.until(ExpectedConditions.presenceOfElementLocated(getLocator(locatorKey)));
-			
-		}catch(Exception e) {
-			return false;
-		}
-		return true;
-	}
-	
-	// true - visible
-	// false - not visible
-	public boolean isElementVisible(String locatorKey) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		try {
-			wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator(locatorKey)));
-		}catch(Exception e) {
-			return false;
-		}
-		return true;
-	}
-	
-	public By getLocator(String locatorKey) {
-		By by=null;
-		System.out.println(locatorKey);
-		if(locatorKey.endsWith("_id"))
-			by = By.id(prop.getProperty(locatorKey));
-		else if(locatorKey.endsWith("_xpath"))
-			by = By.xpath(prop.getProperty(locatorKey));
-		else if(locatorKey.endsWith("_css"))
-			by = By.cssSelector(prop.getProperty(locatorKey));
-		else if(locatorKey.endsWith("_name"))
-			by = By.name(prop.getProperty(locatorKey));
-		
-		return by;
-		
-		
-	}
+        //lkgetLocator(locaterKey);
+        if (!isElementPresent(locatorKey)) {
+            // report failure
+            //System.out.println("Element not present "+locatorKey);
+        }
+        //  check the visibility
+        if (!isElementVisible(locatorKey)) {
+            // report failure
+            //System.out.println("Element not visible "+locatorKey);
+        }
 
-	
+        WebElement e = driver.findElement(getLocator(locatorKey));
+
+        return e;
+    }
+
+    public boolean isElementPresent(String locatorKey) {
+        log("Checking presence of " + locatorKey);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        try {
+            wait.until(ExpectedConditions.presenceOfElementLocated(getLocator(locatorKey)));
+
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
+    // true - visible
+    // false - not visible
+    public boolean isElementVisible(String locatorKey) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator(locatorKey)));
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
+    public By getLocator(String locatorKey) {
+        By by = null;
+        if (locatorKey.endsWith("_id")) {
+            by = By.id(prop.getProperty(locatorKey)); 
+        }else if (locatorKey.endsWith("_xpath")) {
+            by = By.xpath(prop.getProperty(locatorKey)); 
+        }else if (locatorKey.endsWith("_css")) {
+            by = By.cssSelector(prop.getProperty(locatorKey)); 
+        }else if (locatorKey.endsWith("_name")) {
+            by = By.name(prop.getProperty(locatorKey));
+        }
+
+        return by;
+
+    }
 
 }

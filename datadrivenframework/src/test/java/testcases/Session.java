@@ -5,30 +5,43 @@ import org.testng.annotations.Test;
 
 import base.BaseTest;
 
-public class Session extends BaseTest{
+public class Session extends BaseTest {
 
     @Test
-    public void newLocalBuild(ITestContext context){
-        app.log("newLocalBuild");
-        app.click("newItem_css");
-        app.type("newItemName_css", "localRepo");
-        app.getText("newItemType_css");
-       
-     
-       // app.getRowNumWithCellData("buildJobsHome", "testNGSelenium");
-        //app.reportFailure("openBrowserSun non critical fault", true);
-   
-    }
-
-    @Test
-    public void createNewItem(ITestContext context){
-        app.log("createNewItem");
-        //startBuildJob(String buildName)
-        app.click("buildNamePlay_xpath");
+    public void buildJobChanges(ITestContext context) {
+        app.log("buildJobChanges");
         app.click("buildNameMenu_xpath");
-        
-        
+        app.homeBuildJobOptions("Changes");
     }
-    
+
+    @Test
+    public void buildJobWorkspace(ITestContext context) {
+        app.log("buildJobWorkspace");
+        app.click("buildNameMenu_xpath");
+        app.homeBuildJobOptions("Workspace");
+    }
+
+    @Test
+    public void buildJobBuildNow(ITestContext context) {
+        app.log("buildJobBuildNow");
+        app.click("buildNameMenu_xpath");
+        app.homeBuildJobOptions("Build Now");
+    }
+
+    @Test
+    public void buildJobConfigure(ITestContext context) {
+        app.log("buildJobConfigure");
+        app.click("buildNameMenu_xpath");
+        app.homeBuildJobOptions("Configure");
+    }
+
+    @Test
+    public void buildJobDeleteProject(ITestContext context){
+      app.log("Delete Project");
+      app.click("buildNameMenu_xpath");
+      app.homeBuildJobOptions("Delete Project");
+    }
+
+
 
 }

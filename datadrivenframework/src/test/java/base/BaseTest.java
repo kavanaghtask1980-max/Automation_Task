@@ -23,7 +23,6 @@ public class BaseTest {
     public void BeforeTest(ITestContext context) {
 
     app = new ApplicationKeywords();
-    
     context.setAttribute("app", app);
     
     rep = ExtentManager.getReports();
@@ -35,7 +34,7 @@ public class BaseTest {
     context.setAttribute("test", test);
     app.openBrowser("Chrome");
     app.navigate("url"); 
-    test.log(Status.INFO, "In BeforeTest" );
+    
     }
 
     @BeforeMethod(alwaysRun = true)
@@ -44,7 +43,7 @@ public class BaseTest {
     test = (ExtentTest)context.getAttribute("test");
 
     String criticalFailure = (String)context.getAttribute("criticalFailure");
-    System.out.println(criticalFailure);
+
     if(criticalFailure != null && criticalFailure.equals("Y")){
       test.log(Status.SKIP, "Critical Failure In Previous Tests" );
         throw new SkipException("Critical Failure In Previous Tests");
@@ -56,7 +55,6 @@ public class BaseTest {
     public void quit(){
       app.quit();
       test.log(Status.INFO, "In AfterTest" );
-      
       if(rep != null)rep.flush();
       
     }
