@@ -20,6 +20,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
@@ -70,20 +71,52 @@ public class ApplicationKeywords {
             String menuOptionActual = elements.get(i).getText();
             if (menuOptionActual.equals(homeBuildOption)) {
                 
-                JavascriptExecutor js = (JavascriptExecutor) driver;
                 WebElement e = elements.get(i);
+                Actions actions = new Actions(driver);
                 
-                js.executeScript("arguments[0].click();", e);
+                actions.moveToElement(e);
+                actions.clickAndHold(e).release().build().perform();
               
                 String pageTitle = driver.getTitle();
                 test.log(Status.INFO, "Menu item selected " + homeBuildOption);
-               
                 test.log(Status.INFO, "Page title is " +pageTitle);
                 break;
             }
         }
 
     }
+
+    public void buildJobRunNumber(String buildNumber) {
+    
+        
+    WebElement buildHistoryMenu = driver.findElement(By.cssSelector("div#jenkins-build-history"));
+       
+    List<WebElement> arrowMenu = buildHistoryMenu.findElements(By.xpath("//button[@class='jenkins-card__reveal jenkins-jumplist-link']"));
+    List<WebElement> buildNumbers = buildHistoryMenu.findElements(By.cssSelector("div.app-builds-container__item"));
+    
+    System.out.println("Number of arrowMenu:" + arrowMenu.size());
+    System.out.println("Number of buildNumbers:" + buildNumbers.size());
+    
+    for(int i=0;i<arrowMenu.size();i++){
+        System.out.println("Number of arrowMenu: " + i);
+        
+        WebElement arrowMenuChoice = arrowMenu.get(i);
+        String buildNumberChoice = buildNumbers.get(i).getText();
+        System.out.println("buildNumber: " + buildNumbers.get(i).getText());
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        int y = arrowMenuChoice.getLocation().y;
+        System.out.println(y);
+        System.out.println(buildNumberChoice);
+        
+        if(buildNumberChoice.contains(buildNumber)){
+           Actions actions = new Actions(driver);
+           actions.moveToElement(arrowMenuChoice);
+           actions.clickAndHold(arrowMenuChoice).release().build().perform();
+        }
+	}
+}
+    
+    
 
     public void openBrowser(String browserName) {
 
@@ -113,8 +146,8 @@ public class ApplicationKeywords {
         // dynamic wait- not pause
         // global time out- all driver.findelement
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
     }
+    
 
     public void navigate(String url) {
         log("Navigating to " + url);

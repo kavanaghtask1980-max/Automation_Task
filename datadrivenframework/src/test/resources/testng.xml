@@ -3,34 +3,34 @@
 <listeners>
 <listener class-name="listener.MyTestNGListener"/>
 </listeners>
-<test name="Jenkins home builds page - buildJobChanges">
+<test name="Jenkins home builds page - jobConsoleOutput">
 <classes>
 <class name="testcases.Session">
 <methods>
-<include name="buildJobChanges"/>
+<include name="jobConsoleOutput"/>
 </methods>
 </class>
 </classes>
 </test>
-<test name="Jenkins home builds page - buildJobWorkspace">
+<test name="Jenkins home builds page - jobChanges">
 <classes>
 <class name="testcases.Session">
 <methods>
-<include name="buildJobWorkspace"/>
+<include name="jobChanges"/>
 </methods>
 </class>
 </classes>
 </test>
-<test name="Jenkins home builds page - buildJobBuildNow">
+<test name="Jenkins home builds page - jobEditBuildInf">
 <classes>
 <class name="testcases.Session">
 <methods>
-<include name="buildJobBuildNow"/>
+<include name="jobEditBuildInf"/>
 </methods>
 </class>
 </classes>
 </test>
-<test name="Jenkins home builds page - buildJobConfigure">
+<!-- <test name="Jenkins home builds page - buildJobConfigure">
 <classes>
 <class name="testcases.Session">
 <methods>
@@ -47,6 +47,6 @@
 </methods>
 </class>
 </classes>
-</test>
+</test> -->
 </suite>
 <!--  Suite  -->
