@@ -9,16 +9,6 @@ public class Session extends BaseTest {
 
     String number = "200";
 
-    @Test 
-    public void startBuildJob (ITestContext context){
-        app.log("startBuildJob");
-        app.click("buildNameMenu_xpath");
-       // app.homeBuildJobOptions("Build Now");
-        app.homeBuildJobOptions("Workspace");
-        app.buildJobRunNumber(number);
-        app.homeBuildJobOptions("Console Output");
-    }
-
     @Test
     public void jobChanges(ITestContext context) {
         app.log("jobChanges");
@@ -63,7 +53,5 @@ public class Session extends BaseTest {
         app.buildJobRunNumber(number);
         app.homeBuildJobOptions("Timings");
     }
-
-
 
 }
