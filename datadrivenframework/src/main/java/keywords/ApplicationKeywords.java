@@ -69,7 +69,7 @@ public class ApplicationKeywords {
 
         for (int i = 0; i < elements.size(); i++) {
             String menuOptionActual = elements.get(i).getText();
-            if (menuOptionActual.equals(homeBuildOption)) {
+            if (menuOptionActual.contains(homeBuildOption)) {
                 
                 WebElement e = elements.get(i);
                 Actions actions = new Actions(driver);
@@ -194,7 +194,7 @@ public class ApplicationKeywords {
            Actions actions = new Actions(driver);
            actions.moveToElement(arrowMenuChoice);
            actions.clickAndHold(arrowMenuChoice).release().build().perform();
-         //  waitForPageToLoad();
+           waitForPageToLoad();
         }
 	}
 }
