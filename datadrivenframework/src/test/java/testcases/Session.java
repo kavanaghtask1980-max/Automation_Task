@@ -7,7 +7,7 @@ import base.BaseTest;
 
 public class Session extends BaseTest {
 
-    String number = "201";
+    String number = "195";
 
     @Test
     public void jobChanges(ITestContext context) {
