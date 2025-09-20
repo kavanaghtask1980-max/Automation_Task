@@ -56,7 +56,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">Sept 18, 2025 10:14:35 pm</span>
+                    <span class="badge badge-primary">Sept 20, 2025 05:45:23 pm</span>
                 </a>
             </li>
         </ul>
@@ -101,7 +101,7 @@
 					</a>
 					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 						<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success pull-right"></span></a>
-						<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>
+						
 						
 						
 						
@@ -114,28 +114,28 @@
 		</div>
 		<div class="test-list-wrapper scrollable">
 			<ul class="test-list-item">
-				<li class="test-item"  status="fail" test-id="1"
+				<li class="test-item"  status="pass" test-id="1"
 					author=""
 					tag=""
 					device="">
-					<div class="status-avatar fail-bg">
-						<i class="fa fa-times text-white"></i>
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">Jenkins home builds page - jobChanges</p>
-							<p class="duration text-sm">0h 0m 37s+155ms</p>
-							<span class="datetime">22:14:35 pm</span>
+							<p class="name">Jenkins home builds page - hpBuildJobMenuNav</p>
+							<p class="duration text-sm">0h 0m 23s+918ms</p>
+							<span class="datetime">17:45:24 pm</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-fail">Jenkins home builds page - jobChanges</h5>
-									<span class='badge badge-success'>09.18.2025 22:14:35</span>
-									<span class='badge badge-danger'>09.18.2025 22:15:12</span>
-									<span class='badge badge-default'>0h 0m 37s+155ms</span>
+									<h5 class="test-status text-pass">Jenkins home builds page - hpBuildJobMenuNav</h5>
+									<span class='badge badge-success'>09.20.2025 17:45:24</span>
+									<span class='badge badge-danger'>09.20.2025 17:45:48</span>
+									<span class='badge badge-default'>0h 0m 23s+918ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -152,98 +152,161 @@
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:14:35</td>
+				<td>17:45:24</td>
 				<td>
 						Opening the browser Chrome
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:02</td>
+				<td>17:45:35</td>
 				<td>
 						Navigating to url
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:03</td>
+				<td>17:45:36</td>
 				<td>
 						Page Title => Dashboard - Jenkins
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:04</td>
+				<td>17:45:36</td>
 				<td>
 						In BeforeMethod
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:04</td>
+				<td>17:45:37</td>
 				<td>
-						jobChanges
+						hpBuildJobMenuNav
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:04</td>
+				<td>17:45:37</td>
 				<td>
 						Clicking on buildNameMenu_xpath
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:04</td>
+				<td>17:45:37</td>
 				<td>
 						Checking presence of buildNameMenu_xpath
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:04</td>
+				<td>17:45:37</td>
 				<td>
-						Checking presence of homeBuildJobMenu_css
+						Checking presence of hpSelectBuildJobPopMenu_css
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:06</td>
+				<td>17:45:38</td>
 				<td>
-						Menu item selected Workspace
+						Clicking on buildNameMenu_xpath
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:06</td>
+				<td>17:45:38</td>
 				<td>
-						Page title is Workspace of testNGSelenium on Built-In Node : / - Jenkins
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-times text-fail"></i></td>
-				<td>22:15:12</td>
-				<td>
-						stale element reference: stale element not found in the current frame
-  (Session info: chrome=140.0.7339.128)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: '4.0.0-alpha-7', revision: 'de8579b6d5'
-System info: host: 'TASK', ip: '192.168.0.115', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57888}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 146c8eb785888259b6ae4418cf9068f1
+						Checking presence of buildNameMenu_xpath
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:12</td>
+				<td>17:45:39</td>
 				<td>
-						Closing browser => Workspace of testNGSelenium on Built-In Node : / - Jenkins
+						Checking presence of hpSelectBuildJobPopMenu_css
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:12</td>
+				<td>17:45:40</td>
+				<td>
+						Clicking on buildNameMenu_xpath
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:45:40</td>
+				<td>
+						Checking presence of buildNameMenu_xpath
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:45:41</td>
+				<td>
+						Checking presence of hpSelectBuildJobPopMenu_css
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:45:45</td>
+				<td>
+						Clicking on buildNameMenu_xpath
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:45:45</td>
+				<td>
+						Checking presence of buildNameMenu_xpath
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:45:45</td>
+				<td>
+						Checking presence of hpSelectBuildJobPopMenu_css
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:45:46</td>
+				<td>
+						Clicking on buildNameMenu_xpath
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:45:46</td>
+				<td>
+						Checking presence of buildNameMenu_xpath
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:45:46</td>
+				<td>
+						Checking presence of hpSelectBuildJobPopMenu_css
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>17:45:47</td>
+				<td>
+						hpBuildJobMenuNav -  Test Passed
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:45:47</td>
+				<td>
+						Closing browser => Dashboard - Jenkins
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>17:45:48</td>
 				<td>
 						In AfterTest
 				</td>
@@ -253,28 +316,28 @@ Session ID: 146c8eb785888259b6ae4418cf9068f1
 </div>
 					</div>
 				</li>
-				<li class="test-item"  status="fail" test-id="2"
+				<li class="test-item"  status="pass" test-id="2"
 					author=""
 					tag=""
 					device="">
-					<div class="status-avatar fail-bg">
-						<i class="fa fa-times text-white"></i>
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
 							<p class="name">Jenkins home builds page - jobConsoleOutput</p>
-							<p class="duration text-sm">0h 0m 10s+244ms</p>
-							<span class="datetime">22:15:13 pm</span>
+							<p class="duration text-sm">0h 0m 3s+833ms</p>
+							<span class="datetime">17:45:49 pm</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-fail">Jenkins home builds page - jobConsoleOutput</h5>
-									<span class='badge badge-success'>09.18.2025 22:15:13</span>
-									<span class='badge badge-danger'>09.18.2025 22:15:24</span>
-									<span class='badge badge-default'>0h 0m 10s+244ms</span>
+									<h5 class="test-status text-pass">Jenkins home builds page - jobConsoleOutput</h5>
+									<span class='badge badge-success'>09.20.2025 17:45:49</span>
+									<span class='badge badge-danger'>09.20.2025 17:45:53</span>
+									<span class='badge badge-default'>0h 0m 3s+833ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -291,98 +354,35 @@ Session ID: 146c8eb785888259b6ae4418cf9068f1
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:13</td>
+				<td>17:45:49</td>
 				<td>
 						Opening the browser Chrome
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:16</td>
+				<td>17:45:52</td>
 				<td>
 						Navigating to url
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:17</td>
+				<td>17:45:53</td>
 				<td>
 						Page Title => Dashboard - Jenkins
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:17</td>
+				<td>17:45:53</td>
 				<td>
-						In BeforeMethod
+						Closing browser => Dashboard - Jenkins
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:17</td>
-				<td>
-						jobConsoleOutput
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:17</td>
-				<td>
-						Clicking on buildNameMenu_xpath
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:17</td>
-				<td>
-						Checking presence of buildNameMenu_xpath
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:17</td>
-				<td>
-						Checking presence of homeBuildJobMenu_css
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:18</td>
-				<td>
-						Menu item selected Workspace
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:18</td>
-				<td>
-						Page title is Workspace of testNGSelenium on Built-In Node : / - Jenkins
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-times text-fail"></i></td>
-				<td>22:15:23</td>
-				<td>
-						stale element reference: stale element not found in the current frame
-  (Session info: chrome=140.0.7339.128)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: '4.0.0-alpha-7', revision: 'de8579b6d5'
-System info: host: 'TASK', ip: '192.168.0.115', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58234}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 68c5d456f4341026a9ab852b558d4316
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:23</td>
-				<td>
-						Closing browser => Workspace of testNGSelenium on Built-In Node : / - Jenkins
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:24</td>
+				<td>17:45:53</td>
 				<td>
 						In AfterTest
 				</td>
@@ -402,8 +402,8 @@ Session ID: 68c5d456f4341026a9ab852b558d4316
 					<div class="open-test">
 						<div class="test-detail">
 							<p class="name">Jenkins home builds page - jobEditBuildInf</p>
-							<p class="duration text-sm">0h 0m 7s+960ms</p>
-							<span class="datetime">22:15:24 pm</span>
+							<p class="duration text-sm">0h 0m 2s+905ms</p>
+							<span class="datetime">17:45:53 pm</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
@@ -411,9 +411,9 @@ Session ID: 68c5d456f4341026a9ab852b558d4316
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
 									<h5 class="test-status text-pass">Jenkins home builds page - jobEditBuildInf</h5>
-									<span class='badge badge-success'>09.18.2025 22:15:24</span>
-									<span class='badge badge-danger'>09.18.2025 22:15:32</span>
-									<span class='badge badge-default'>0h 0m 7s+960ms</span>
+									<span class='badge badge-success'>09.20.2025 17:45:53</span>
+									<span class='badge badge-danger'>09.20.2025 17:45:56</span>
+									<span class='badge badge-default'>0h 0m 2s+905ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -430,112 +430,35 @@ Session ID: 68c5d456f4341026a9ab852b558d4316
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:24</td>
+				<td>17:45:53</td>
 				<td>
 						Opening the browser Chrome
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:26</td>
+				<td>17:45:55</td>
 				<td>
 						Navigating to url
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:26</td>
+				<td>17:45:56</td>
 				<td>
 						Page Title => Dashboard - Jenkins
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:26</td>
+				<td>17:45:56</td>
 				<td>
-						In BeforeMethod
+						Closing browser => Dashboard - Jenkins
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:26</td>
-				<td>
-						jobEditBuildInf
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:26</td>
-				<td>
-						Clicking on buildNameMenu_xpath
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:26</td>
-				<td>
-						Checking presence of buildNameMenu_xpath
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:26</td>
-				<td>
-						Checking presence of homeBuildJobMenu_css
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:27</td>
-				<td>
-						Menu item selected Workspace
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:27</td>
-				<td>
-						Page title is Workspace of testNGSelenium on Built-In Node : / - Jenkins
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:31</td>
-				<td>
-						Checking presence of homeBuildJobMenu_css
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:31</td>
-				<td>
-						Menu item selected Edit Build Information
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:31</td>
-				<td>
-						Page title is #200 Config - Jenkins
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-check text-pass"></i></td>
-				<td>22:15:31</td>
-				<td>
-						jobEditBuildInf -  Test Passed
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:31</td>
-				<td>
-						Closing browser => #200 Config - Jenkins
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:32</td>
+				<td>17:45:56</td>
 				<td>
 						In AfterTest
 				</td>
@@ -545,28 +468,28 @@ Session ID: 68c5d456f4341026a9ab852b558d4316
 </div>
 					</div>
 				</li>
-				<li class="test-item"  status="fail" test-id="4"
+				<li class="test-item"  status="pass" test-id="4"
 					author=""
 					tag=""
 					device="">
-					<div class="status-avatar fail-bg">
-						<i class="fa fa-times text-white"></i>
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
 							<p class="name">Jenkins home builds page - jobDeleteBuild</p>
-							<p class="duration text-sm">0h 0m 8s+792ms</p>
-							<span class="datetime">22:15:32 pm</span>
+							<p class="duration text-sm">0h 0m 3s+299ms</p>
+							<span class="datetime">17:45:56 pm</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-fail">Jenkins home builds page - jobDeleteBuild</h5>
-									<span class='badge badge-success'>09.18.2025 22:15:32</span>
-									<span class='badge badge-danger'>09.18.2025 22:15:41</span>
-									<span class='badge badge-default'>0h 0m 8s+792ms</span>
+									<h5 class="test-status text-pass">Jenkins home builds page - jobDeleteBuild</h5>
+									<span class='badge badge-success'>09.20.2025 17:45:56</span>
+									<span class='badge badge-danger'>09.20.2025 17:45:59</span>
+									<span class='badge badge-default'>0h 0m 3s+299ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -583,98 +506,35 @@ Session ID: 68c5d456f4341026a9ab852b558d4316
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:32</td>
+				<td>17:45:56</td>
 				<td>
 						Opening the browser Chrome
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:34</td>
+				<td>17:45:58</td>
 				<td>
 						Navigating to url
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:34</td>
+				<td>17:45:58</td>
 				<td>
 						Page Title => Dashboard - Jenkins
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:34</td>
+				<td>17:45:58</td>
 				<td>
-						In BeforeMethod
+						Closing browser => Dashboard - Jenkins
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:34</td>
-				<td>
-						jobDeleteBuild
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:34</td>
-				<td>
-						Clicking on buildNameMenu_xpath
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:34</td>
-				<td>
-						Checking presence of buildNameMenu_xpath
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:34</td>
-				<td>
-						Checking presence of homeBuildJobMenu_css
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:35</td>
-				<td>
-						Menu item selected Workspace
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:35</td>
-				<td>
-						Page title is Workspace of testNGSelenium on Built-In Node : / - Jenkins
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-times text-fail"></i></td>
-				<td>22:15:40</td>
-				<td>
-						stale element reference: stale element not found in the current frame
-  (Session info: chrome=140.0.7339.128)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: '4.0.0-alpha-7', revision: 'de8579b6d5'
-System info: host: 'TASK', ip: '192.168.0.115', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58296}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: fbb2713a9c3b6ece252a893e3a7c4abb
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:40</td>
-				<td>
-						Closing browser => Workspace of testNGSelenium on Built-In Node : / - Jenkins
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:41</td>
+				<td>17:45:59</td>
 				<td>
 						In AfterTest
 				</td>
@@ -694,8 +554,8 @@ Session ID: fbb2713a9c3b6ece252a893e3a7c4abb
 					<div class="open-test">
 						<div class="test-detail">
 							<p class="name">Jenkins home builds page - jobTimings</p>
-							<p class="duration text-sm">0h 0m 9s+61ms</p>
-							<span class="datetime">22:15:41 pm</span>
+							<p class="duration text-sm">0h 0m 2s+232ms</p>
+							<span class="datetime">17:45:59 pm</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
@@ -703,9 +563,9 @@ Session ID: fbb2713a9c3b6ece252a893e3a7c4abb
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
 									<h5 class="test-status text-pass">Jenkins home builds page - jobTimings</h5>
-									<span class='badge badge-success'>09.18.2025 22:15:41</span>
-									<span class='badge badge-danger'>09.18.2025 22:15:50</span>
-									<span class='badge badge-default'>0h 0m 9s+61ms</span>
+									<span class='badge badge-success'>09.20.2025 17:45:59</span>
+									<span class='badge badge-danger'>09.20.2025 17:46:01</span>
+									<span class='badge badge-default'>0h 0m 2s+232ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -722,112 +582,35 @@ Session ID: fbb2713a9c3b6ece252a893e3a7c4abb
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:41</td>
+				<td>17:45:59</td>
 				<td>
 						Opening the browser Chrome
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:42</td>
+				<td>17:46:01</td>
 				<td>
 						Navigating to url
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:43</td>
+				<td>17:46:01</td>
 				<td>
 						Page Title => Dashboard - Jenkins
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:43</td>
+				<td>17:46:01</td>
 				<td>
-						In BeforeMethod
+						Closing browser => Dashboard - Jenkins
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:43</td>
-				<td>
-						jobTimings
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:43</td>
-				<td>
-						Clicking on buildNameMenu_xpath
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:43</td>
-				<td>
-						Checking presence of buildNameMenu_xpath
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:44</td>
-				<td>
-						Checking presence of homeBuildJobMenu_css
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:45</td>
-				<td>
-						Menu item selected Workspace
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:45</td>
-				<td>
-						Page title is Workspace of testNGSelenium on Built-In Node : / - Jenkins
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:49</td>
-				<td>
-						Checking presence of homeBuildJobMenu_css
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:49</td>
-				<td>
-						Menu item selected Timings
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:49</td>
-				<td>
-						Page title is #200 Timings - Jenkins
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-check text-pass"></i></td>
-				<td>22:15:49</td>
-				<td>
-						jobTimings -  Test Passed
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:49</td>
-				<td>
-						Closing browser => #200 Timings - Jenkins
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-info text-info"></i></td>
-				<td>22:15:50</td>
+				<td>17:46:01</td>
 				<td>
 						In AfterTest
 				</td>
@@ -868,12 +651,12 @@ Session ID: fbb2713a9c3b6ece252a893e3a7c4abb
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='40%'>
-						<b>2</b> tests passed
+					<div><small data-tooltip='100%'>
+						<b>5</b> tests passed
 						</small>
 					</div>
 					<div>
-						<small data-tooltip='60%'><b>3</b> tests failed, 
+						<small data-tooltip='0%'><b>0</b> tests failed, 
 						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
@@ -891,10 +674,10 @@ Session ID: fbb2713a9c3b6ece252a893e3a7c4abb
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='2.817%'><b>2</b> events passed</small></div>
+					<div><small data-tooltip='2.326%'><b>1</b> events passed</small></div>
 					<div>
-						<small data-tooltip='4.225%'><b>3</b> events failed, 
-						<b data-tooltip='92.958%'>66</b> others
+						<small data-tooltip='0%'><b>0</b> events failed, 
+						<b data-tooltip='97.674%'>42</b> others
 						</small>
 					</div>
 				</div>
@@ -911,7 +694,7 @@ Session ID: fbb2713a9c3b6ece252a893e3a7c4abb
 							<h2 class="font-size-28 font-weight-light mt-3">5</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-							<span>40.00%</span>
+							<span>100.00%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -927,7 +710,7 @@ Session ID: fbb2713a9c3b6ece252a893e3a7c4abb
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Start</h6>
-							<h4 class="font-weight-light mt-4">Sept 18, 2025 10:14:35 pm</h4>
+							<h4 class="font-weight-light mt-4">Sept 20, 2025 05:45:23 pm</h4>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -943,7 +726,7 @@ Session ID: fbb2713a9c3b6ece252a893e3a7c4abb
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Duration</h6>
-							<h4 class="font-weight-light mt-4">0h 1m 14s+716ms</h4>
+							<h4 class="font-weight-light mt-4">0h 0m 38s+40ms</h4>
 							<span class="text-semibold font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -974,13 +757,13 @@ Session ID: fbb2713a9c3b6ece252a893e3a7c4abb
 <script>
 	var statusGroup = {
 	    parentCount: 5,
-		passParent: 2,
-		failParent: 3,
+		passParent: 5,
+		failParent: 0,
 		fatalParent: 0,
 		errorParent: 0,
 		warningParent: 0,
 		skipParent: 0,
-		exceptionsParent: 3,
+		exceptionsParent: 0,
 		childCount: 0,
 		passChild: 0,
 		failChild: 0,
@@ -1001,21 +784,21 @@ Session ID: fbb2713a9c3b6ece252a893e3a7c4abb
 		infoGrandChild: 0,
 		debugGrandChild: 0,
 		exceptionsGrandChild: 0,
-		eventsCount: 71,
-		passEvents: 2,
-		failEvents: 3,
+		eventsCount: 43,
+		passEvents: 1,
+		failEvents: 0,
 		fatalEvents: 0,
 		errorEvents: 0,
 		warningEvents: 0,
 		skipEvents: 0,
-		infoEvents: 66,
+		infoEvents: 42,
 		debugEvents: 0,
 		exceptionsEvents: 0
 	};
 </script>
 <script>
 	var timeline = {
-	        "Jenkins home builds page - jobChanges":37.155,"Jenkins home builds page - jobConsoleOutput":10.244,"Jenkins home builds page - jobEditBuildInf":7.96,"Jenkins home builds page - jobDeleteBuild":8.792,"Jenkins home builds page - jobTimings":9.061
+	        "Jenkins home builds page - hpBuildJobMenuNav":23.918,"Jenkins home builds page - jobConsoleOutput":3.833,"Jenkins home builds page - jobEditBuildInf":2.905,"Jenkins home builds page - jobDeleteBuild":3.299,"Jenkins home builds page - jobTimings":2.232
 	};
 </script>
                 </div>

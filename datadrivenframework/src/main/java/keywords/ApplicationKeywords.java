@@ -57,71 +57,76 @@ public class ApplicationKeywords {
         }
 
         softAssert = new SoftAssert();
+        }
 
-    }
-
-       public void homeBuildJobOptions(String homeBuildOption) {
-
-        WebElement homeBuildJobMenu = getElement("homeBuildJobMenu_css");
-        List<WebElement> elements = homeBuildJobMenu.findElements(By.className("jenkins-dropdown__item"));
+        public void hpSelectBuildJobPopMenu(String homeBuildOption) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         
-        System.out.println("Number of elements:" + elements.size());
+        WebElement hpSelectBuildPopJobMenu = getElement("hpSelectBuildJobPopMenu_css");
+        List<WebElement> elements = hpSelectBuildPopJobMenu.findElements(By.className("jenkins-dropdown__item"));
+        
+        System.out.println("Number of menu items:" + elements.size());
 
         for (int i = 0; i < elements.size(); i++) {
-            String menuOptionActual = elements.get(i).getText();
-            if (menuOptionActual.contains(homeBuildOption)) {
-                
+            String hpSelectBuildPopJobMenuOptions = elements.get(i).getText();
+            System.out.println("Menu choice:" + hpSelectBuildPopJobMenuOptions);
+            //random selection
+
+             if (hpSelectBuildPopJobMenuOptions.contains(homeBuildOption)) {
+                System.out.println("Menu choice selected: " + hpSelectBuildPopJobMenuOptions);
                 WebElement e = elements.get(i);
+                String Test =  elements.get(i).getText();
+                System.out.println(Test);
                 Actions actions = new Actions(driver);
-                
                 actions.moveToElement(e);
-                actions.clickAndHold(e).release().build().perform();
-              
-                String pageTitle = driver.getTitle();
-                test.log(Status.INFO, "Menu item selected " + homeBuildOption);
-                test.log(Status.INFO, "Page title is " +pageTitle);
+                actions.click(e).release().build().perform();
+
+                //URL Validation function?
+                jsExecutor.executeScript("window.history.back();");
+                waitForPageToLoad();
+                
                 break;
             }
-        }
+             
+           }
 
     }
 
-    public void homeBuildJobOptions1(String homeBuildOption) {
-
-        WebElement homeBuildJobMenu = getElement("homeBuildJobMenu_css");
-        List<WebElement> elements = homeBuildJobMenu.findElements(By.className("jenkins-dropdown__item"));
-        
-        System.out.println("Number of elements:" + elements.size());
-
-        for (int i = 0; i < elements.size(); i++) {
-            WebElement arrowLocation = elements.get(i);
-            String menuOptionActual = elements.get(i).getText();
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-
-            int z = arrowLocation.getLocation().y;
-            System.out.println(z);
-            System.out.println(menuOptionActual);
-            js.executeScript("javascript:window.scrollBy(0,"+z+")");
-
+//     public void buildNumberMenu(String buildNumber) {
+    
+//     WebElement buildNumberMenu = driver.findElement(By.cssSelector("div#jenkins-build-history"));
        
-            if (menuOptionActual.contains(homeBuildOption)) {
-                
-                WebElement e = elements.get(i);
-                Actions actions = new Actions(driver);
-                
-                actions.moveToElement(e);
-               // actions.clickAndHold(e).release().build().perform();
-                e.click();
-                waitForPageToLoad();
-                String pageTitle = driver.getTitle();
-                test.log(Status.INFO, "Menu item selected " + homeBuildOption);
-                test.log(Status.INFO, "Page title is " +pageTitle);
-                
-            break;}
-            }
-        }
+//     List<WebElement> buildMenu = buildNumberMenu.findElements(By.xpath("//button[@class='jenkins-card__reveal jenkins-jumplist-link']"));
+//     List<WebElement> buildNumbers = buildNumberMenu.findElements(By.cssSelector("div.app-builds-container__item"));
+    
+//     int numberOfBuildJobs = buildNumbers.size();
+//     System.out.println("builds available: " + numberOfBuildJobs);
+    
+//     for(int i=0;i<buildMenu.size();i++){
 
-    	public void wait(int time){
+//         WebElement loopNumber = buildMenu.get(i);
+//         String timeOfRun = buildNumbers.get(i).getText();
+
+//        // System.out.println("Builds number: " + buildNumbers.size());
+//         System.out.println("Build number: " + timeOfRun);
+//         System.out.println("loop number: " + timeOfRun);
+        
+//        // JavascriptExecutor js = (JavascriptExecutor) driver;
+//        int y = buildRecordNumber.getLocation().y;
+//        System.out.println(y);
+//        System.out.println(buildRecordNumber);
+//        js.executeScript("javascript:arguments[0].scrollIntoView(true);", buildRecordNumber);
+//         // if(buildRecordNumber.contains(buildNumber)){
+//         // Actions actions = new Actions(driver);
+//        // actions.moveToElement(buildRecordNumber);
+//         //     actions.click(y).release().build().perform();
+//         //    waitForPageToLoad();
+//         //    break;
+//         // }
+// 	}
+// }
+
+   public void wait(int time){
 		try {
 			Thread.sleep(time*1000);
 		} catch (InterruptedException e) {
@@ -135,26 +140,26 @@ public class ApplicationKeywords {
 		int i=0;
 		
 		while(i!=10){
-		String state = (String)js.executeScript("return document.readyState;");
-		System.out.println("STATE **********************************" + state);
-
-		if(state.equals("complete")){
-
-        System.out.println("BREAK *******************************" + state);
+		String state = (String)js.executeScript("javascript:return document.readyState;");
+		
+        if(state.equals("complete")){
+        System.out.println("return document.readyState => " + state);
+      
         
 			break;}
 		else
+            //.........wait system
 			wait(2);
-
+        System.out.println("Waiting => ." + ".");
 		i++;
 		}
-        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-		wait(2);// wait of 2 sec between page status and jquery
-		//check for jquery status
+        // System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+		// wait(2);// wait of 2 sec between page status and jquery
+		// //check for jquery status
 		// i=0;
 		// while(i!=10){
 	
-		// 	Boolean result= (Boolean) js.executeScript("return window.jQuery != undefined && jQuery.active == 0;");
+		// 	Boolean result= (Boolean) js.executeScript("javascript:return window.jQuery != undefined && jQuery.active == 0;");
 		// 	System.out.println(result);
 		// 	if(result){
         //         System.out.println("result **********************************" + result);
@@ -167,41 +172,7 @@ public class ApplicationKeywords {
 		
 		}
 
-
-
-    public void buildJobRunNumber(String buildNumber) {
-    
-    WebElement buildHistoryMenu = driver.findElement(By.cssSelector("div#jenkins-build-history"));
-       
-    List<WebElement> arrowMenu = buildHistoryMenu.findElements(By.xpath("//button[@class='jenkins-card__reveal jenkins-jumplist-link']"));
-    List<WebElement> buildNumbers = buildHistoryMenu.findElements(By.cssSelector("div.app-builds-container__item"));
-    
-    System.out.println("Number of arrowMenu:" + arrowMenu.size());
-    System.out.println("Number of buildNumbers:" + buildNumbers.size());
-    
-    for(int i=0;i<arrowMenu.size();i++){
-        System.out.println("Number of arrowMenu: " + i);
-        
-        WebElement arrowMenuChoice = arrowMenu.get(i);
-        String buildNumberChoice = buildNumbers.get(i).getText();
-        System.out.println("buildNumber: " + buildNumbers.get(i).getText());
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        int y = arrowMenuChoice.getLocation().y;
-        System.out.println(y);
-        System.out.println(buildNumberChoice);
-        js.executeScript("javascript:window.scrollBy(0,"+y+")");
-        if(buildNumberChoice.contains(buildNumber)){
-           Actions actions = new Actions(driver);
-           actions.moveToElement(arrowMenuChoice);
-           actions.clickAndHold(arrowMenuChoice).release().build().perform();
-           waitForPageToLoad();
-        }
-	}
-}
-    
-    
-
-    public void openBrowser(String browserName) {
+        public void openBrowser(String browserName) {
 
         log("Opening the browser " + browserName);
 
